@@ -2,7 +2,8 @@ import requests
 from bs4 import BeautifulSoup
 
 LIMIT = 50
-URL = f"https://www.indeed.com/jobs?as_and=python&sort=&limit={LIMIT}"
+DESIRE_KEYWORD = "python"
+URL = ""
 
 
 def extract_indeed_pages():
@@ -57,7 +58,12 @@ def extract_indeed_jobs(last_page):
 
   return jobs
 
-def get_jobs_indeed():
+def get_jobs_indeed(desire_keyword, desire_pages = None):
+  global DESIRE_KEYWORD, URL
+  DESIRE_KEYWORD = desire_keyword
+  URL = f"https://www.indeed.com/jobs?as_and={DESIRE_KEYWORD}&sort=&limit={LIMIT}"
+  print(URL)
   last_page = extract_indeed_pages()
+  last_page = last_page if desire_pages is None else desire_pages
   jobs = extract_indeed_jobs(last_page)
   return jobs
