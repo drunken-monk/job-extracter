@@ -38,8 +38,8 @@ def extract_jobs_indeed(html):
     "title": title,
     "company": company,
     "location": location,
-    "link": f"https://www.indeed.com/viewjob?jk={job_id}",
-    "salary": salary
+    "salary": salary,
+    "link": f"https://www.indeed.com/viewjob?jk={job_id}"
   }
 
 
