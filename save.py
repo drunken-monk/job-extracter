@@ -7,7 +7,7 @@ def save_to_csv(jobs):
   file = open("jobs.csv", mode="w")
   writer = csv.writer(file)
 
-  writer.writerow(["title", "company", "location", "salary", "link"])
+  writer.writerow(["site", "title", "company", "location", "salary", "link"])
 
   for job in jobs:
     writer.writerow(list(job.value()))
