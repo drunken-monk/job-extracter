@@ -46,8 +46,8 @@ def extract_so_htmls(last_page, url):
   return jobs_so
 
 
-def get_jobs_so(keyword, desire_pages = None):
-  url = f"https://stackoverflow.com/jobs?q={keyword}&sort=i"
+def get_jobs_so(keyword, desire_pages = None, is_remote = "true"):
+  url = f"https://stackoverflow.com/jobs?q={keyword}&sort=i&r={is_remote}"##
   last_page = get_so_pages(url) if desire_pages is None else desire_pages
   jobs_so = extract_so_htmls(last_page, url)
   return jobs_so
